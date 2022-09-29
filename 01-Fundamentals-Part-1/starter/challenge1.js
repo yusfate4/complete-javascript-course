@@ -24,5 +24,5 @@ console.log("Mark's BMI is " + markBmi1);
 johnBmi1 = johnMass1 / johnHeight1 ** 2;
 console.log("John's BMI is " + johnBmi1);
 
-let markHigherBMI1 = markBmi > johnBmi;
+let markHigherBMI1 = markBmi1 > johnBmi1;
 console.log(markHigherBMI1);

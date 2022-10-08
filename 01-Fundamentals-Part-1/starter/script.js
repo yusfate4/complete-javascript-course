@@ -71,7 +71,6 @@ console.log(x, y);
 
 const averageAge = ageJonas + ageSarah / 2;
 console.log(ageJonas, ageSarah, averageAge);
-*/
 
 // Conditional statement
 
@@ -94,3 +93,125 @@ if (birthYear <= 2000) {
 }
 
 console.log(century);
+
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log("I a m" + 23 + " years old");
+console.log("23" - "10" - 3);
+console.log("23" + "2");
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
+
+// boolean
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all");
+} else {
+  console.log("You should get a job");
+}
+
+let height = 8;
+if (height) {
+  console.log("Yay! Height is dined");
+} else {
+  console.log("hEIGHT IS uNDEFINED");
+}
+
+const age = 18;
+if (age === 18) {
+  console.log("You just became an adult (Strict");
+}
+
+if (age == 18) {
+  console.log("You just became an adult (loose)");
+}
+
+const favourite = Number(prompt("What is your favourite number?"));
+console.log(favourite);
+
+if (favourite == 23) {
+  console.log("Cool! 23 is an amazing number");
+} else if (favourite === 7) {
+  console.log("7 is also a cool number");
+} else {
+  console.log("Number is not 23 or 7");
+}
+
+if (favourite !== 23) console.log("why not 23?");
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+if (shouldDrive) {
+  console.log("Sarah is able to drive");
+} else {
+  console.log("Someone else should drive.....");
+}
+
+const isTired = false;
+console.log(hasDriversLicense || hasGoodVision || isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired){
+    console.log('Sarah is able to drive!');
+
+}else {
+    console.log('Someone else should drive ...');
+}
+
+const day = "friday";
+switch (day) {
+  case "monday":
+    console.log("Plan my course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+    break
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend");
+    break;
+  default:
+    console.log("Not a valid day");
+}
+*/
+
+const age = 3;
+age >= 18
+  ? console.log("I like to drink wine")
+  : console.log("I like to drink water");
+
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+
+

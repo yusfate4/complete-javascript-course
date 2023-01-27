@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -177,6 +177,7 @@ restaurant.orderPizza('mushroom')
 */
 
 // Use any data type, return any data type, short-circuiting
+/*
 console.log(3 || 'Jonas');
 
 restaurant.numGuests || 10 
@@ -201,8 +202,180 @@ rest2.numGuests = rest2.numGuests || 10
 
 console.log(rest1);
 console.log(rest2);
+*/
+
+// coding challenge #1
+// const team = {
+//   players1: 'goalkeeper',
+//   players2:
+// }
+
+// const array = []; //An array
+// const person = {
+//   firstName: 'Yusuf',
+//   lastName: 'Nusaybah',
+//   age: 97,
+//   male: true
+
+// }
+// console.log(person);
+
+// An object
+
+// const person = {
+//   firstName: 'Asabeneh',
+//   lastName: 'Yetayeh',
+//   age: 250,
+//   country: 'Finland',
+//   city: 'Helsinki',
+//   skills: [
+//     'HTML',
+//     'CSS',
+//     'JavaScript',
+//     'React',
+//     'Node',
+//     'MongoDB',
+//     'Python',
+//     'D3.js',
+//   ],
+//   isMarried: true,
+// };
+
+// console.log(person.firstName);
+
+// const person = {
+//   firstName: 'Asabeneh',
+//   lastName: 'Yetayeh',
+//   age: 250,
+//   country: 'Finland',
+//   city: 'Helsinki',
+//   skills: [
+//     'HTML',
+//     'CSS',
+//     'JavaScript',
+//     'React',
+//     'Node',
+//     'MongoDB',
+//     'Python',
+//     'D3.js'
+//   ],
+//   getFullName: function() {
+//     return `${this.firstName} ${this.lastName}`
+//   }
+// }
+// person.nationality = 'Ethiopian'
+// person.country = 'Finland'
+// person.title = 'teacher'
+// person.skills.push('Meteor')
+// person.skills.push('SasS')
+// person.isMarried = true
+
+// person.getPersonInfo = function() {
+//   let skillsWithoutLastSkill = this.skills
+//     .splice(0, this.skills.length - 1)
+//     .join(', ')
+//   let lastSkill = this.skills.splice(this.skills.length - 1)[0]
+
+//   let skills = `${skillsWithoutLastSkill}, and ${lastSkill}`
+//   let fullName = this.getFullName()
+//   let statement = `${fullName} is a ${this.title}.\nHe lives in ${this.country}.\nHe teaches ${skills}.`
+//   return statement
+// }
+// console.log(person)
+// console.log(person.getPersonInfo())
+// console.log(person.hasOwnProperty('origin'));
 
 
+// Create an empty object called dog
+// Print the the dog object on the console
+// Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
+// Get name, legs, color, age and bark value from the dog object
+// Set new properties the dog object: breed, getDogInfo
+
+// const dog = {
+//   name: 'Zinba',
+//   legs: 2,
+//   color: 'black',
+//   age: 28,
+//   bark: 'woof woof'
+// }
+
+// dog.breed = ''
+
+// console.log(dog.name);
+// console.log(dog.legs);
+// console.log(dog.color);
+// console.log(dog.age);
+// console.log(dog.bark);
+
+const users = {
+  Alex: {
+    email: 'alex@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    age: 20,
+    isLoggedIn: false,
+    points: 30
+  },
+  Asab: {
+    email: 'asab@asab.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 25,
+    isLoggedIn: false,
+    points: 50
+  },
+  Brook: {
+    email: 'daniel@daniel.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+    age: 30,
+    isLoggedIn: true,
+    points: 50
+  },
+  Daniel: {
+    email: 'daniel@alex.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  John: {
+    email: 'john@john.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    age: 20,
+    isLoggedIn: true,
+    points: 50
+  },
+  Thomas: {
+    email: 'thomas@thomas.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  },
+  Paul: {
+    email: 'paul@paul.com',
+    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    age: 20,
+    isLoggedIn: false,
+    points: 40
+  }
+}
 
 
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+}
+ 
+// The for of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
 
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()){
+  console.log(`${i + 1}: ${el}`);
+}
+
+console.log(...menu.entries());

@@ -285,7 +285,6 @@ console.log(rest2);
 // console.log(person.getPersonInfo())
 // console.log(person.hasOwnProperty('origin'));
 
-
 // Create an empty object called dog
 // Print the the dog object on the console
 // Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
@@ -314,68 +313,159 @@ const users = {
     skills: ['HTML', 'CSS', 'JavaScript'],
     age: 20,
     isLoggedIn: false,
-    points: 30
+    points: 30,
   },
   Asab: {
     email: 'asab@asab.com',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Redux',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node',
+    ],
     age: 25,
     isLoggedIn: false,
-    points: 50
+    points: 50,
   },
   Brook: {
     email: 'daniel@daniel.com',
     skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
     age: 30,
     isLoggedIn: true,
-    points: 50
+    points: 50,
   },
   Daniel: {
     email: 'daniel@alex.com',
     skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
     age: 20,
     isLoggedIn: false,
-    points: 40
+    points: 40,
   },
   John: {
     email: 'john@john.com',
     skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
     age: 20,
     isLoggedIn: true,
-    points: 50
+    points: 50,
   },
   Thomas: {
     email: 'thomas@thomas.com',
     skills: ['HTML', 'CSS', 'JavaScript', 'React'],
     age: 20,
     isLoggedIn: false,
-    points: 40
+    points: 40,
   },
   Paul: {
     email: 'paul@paul.com',
-    skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+    skills: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'MongoDB',
+      'Express',
+      'React',
+      'Node',
+    ],
     age: 20,
     isLoggedIn: false,
-    points: 40
-  }
-}
+    points: 40,
+  },
+};
 
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// }
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-}
- 
-// The for of loop
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+// // The for of loop
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-for (const [i, el] of menu.entries()){
-  console.log(`${i + 1}: ${el}`);
-}
+// for (const [i, el] of menu.entries()){
+//   console.log(`${i + 1}: ${el}`);
+// }
 
-console.log(...menu.entries());
+// console.log(...menu.entries());
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+
+// for (const day of days){
+//   console.log(day);
+//   // restaurant.openingHours[day]
+
+// }
+
+// // LOoping objects
+// for (const day of Object.keys(openingHours)){
+//   console.log(day);
+// }
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/

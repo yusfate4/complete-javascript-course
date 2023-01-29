@@ -449,6 +449,24 @@ const game = {
   },
 };
 
+// 1.
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+// 2.
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
 /* 
 Let's continue with our football betting app!
 
@@ -469,3 +487,77 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD LUCK 😀
 */
+
+// SETS
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Yusuf'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+const staff = ['water', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = new Set(staff);
+console.log(staffUnique);
+
+// MAP
+
+const rest = new Map();
+rest.set('name', 'Classicco Italiano');
+rest.set('1', 'Firenze, Italy');
+console.log(rest.set('name', 'Classicco Italiano'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'vegetable', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get('true'));
+console.log(rest.get('1'));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+const question = new Map([
+    ['question', 'What is the best programming languagee'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaSCript'],
+  ['correct', 3],
+  [true, 'Correct!!!'],
+  [false, "try again"]
+
+])
+
+console.log(question);
+
+// Covert object to map
+// console.log(Object.entries(openingHours));
+
+for (const [key, value] of question){
+  if(typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = 
+
+
+// Coding challenge 3

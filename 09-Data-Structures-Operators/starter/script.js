@@ -691,19 +691,16 @@ console.log(message.padStart(25, '+'));
 
 const maskCreditCard = function (number) {
   const str = number + '';
-  const last = str.slice(-4)
-  return last.padStart(str.length, '*')
-
-
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
 };
-console.log(maskCreditCard(466573885))
-console.log(maskCreditCard(3456845885885))
-console.log(maskCreditCard('548384543985434'))
+console.log(maskCreditCard(466573885));
+console.log(maskCreditCard(3456845885885));
+console.log(maskCreditCard('548384543985434'));
 
 // Repeat
-const message2 = 'Bad weather... All Departures Delayed... '
+const message2 = 'Bad weather... All Departures Delayed... ';
 console.log(message2.repeat(5));
-
 
 // Coding Challenge #4
 
@@ -735,3 +732,16 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.question('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+
+  for (const row of rows) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
+  }
+});

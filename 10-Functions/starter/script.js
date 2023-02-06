@@ -159,7 +159,102 @@ document
   .querySelector('.buy')
   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
-  // Partial application
-  const addTax = (rate, value) => value + value * rate
-  console.log(addTax(0.1, 200));
-  
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVat = addTax.bind(null, 0.23);
+
+console.log(addVat(100));
+console.log(addVat(23));
+
+const newTax = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const addVat2 = newTax(0.23);
+console.log(addVat(100));
+console.log(addVat(23));
+// IIFE
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce(
+  // IIFE
+  (function () {
+    console.log('This will ALSO never run again');
+    const isPrivate = 23;
+  })()
+);
+
+// console.log(isPrivate);
+
+() =>
+  console.log(
+    'Thsi is ALSO not run                                                                                                                                                                                                                                                                                                                                                              '
+  );
+
+// Closure
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+// Examples of closures
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+
+// Re-assigning f function
+h();
+f();
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000;
+boardPassengers(100, 3);
+
+// coding challenge 2
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();

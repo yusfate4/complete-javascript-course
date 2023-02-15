@@ -224,6 +224,13 @@ btnClose.addEventListener('click', function (e) {
 
   inputCloseUsername.value = inputClosePin.value = '';
 });
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -373,6 +380,7 @@ const eurToUsd = 1.1;
 // console.log(movementsUSD);
 
 // Arrow function
+/*
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 console.log(movements);
 console.log(movementsUSD);
@@ -423,7 +431,7 @@ const min = movements.reduce(function (acc, mov) {
   else return mov;
 }, movements[0]);
 console.log(min);
-
+*/
 // Coding Challenge #2
 
 /* 
@@ -460,6 +468,7 @@ const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg1, avg2);
 */
 
+/*
 const eurToUsd1 = 1.1;
 const totalDepositsUSD = movements
   .filter(mov => mov > 0)
@@ -507,32 +516,147 @@ const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
 console.log(owners);
 
-
 // NUmbers
 console.log(movements);
 console.log(movements.sort());
 
-
 // Ascending
 movements.sort((a, b) => {
   if (a > b) return 1;
-  if (a < b) return -1
-})
+  if (a < b) return -1;
+});
 
 console.log(movements);
-
 
 // Descending
 movements.sort((a, b) => {
   if (a > b) return -1;
-  if (a < b) return 1
-})
+  if (a < b) return 1;
+});
 
 console.log(movements);
 
-
-movements.sort((a, b) => a - b)
+movements.sort((a, b) => a - b);
 console.log(movements);
 
-movements.sort((a, b) => b - a)
+movements.sort((a, b) => b - a);
 console.log(movements);
+
+// Array from
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener('click', function () {
+  const movementUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementUI);
+});
+*/
+
+// Array Methods Practice
+// 1. Adding the deposit together
+
+/*
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositSum);
+
+// 2. Number of deposit
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? ++count : count), 0);
+
+console.log(numDeposits1000);
+
+let a = 10;
+console.log(++a);
+console.log(a);
+
+// 3. create an object that contains the number of deposit and withdrawer
+const { deposits, withdrawals } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+      return sums;
+    },
+    {
+      deposits: 0,
+      withdrawals: 0,
+    }
+  );
+console.log(deposits, withdrawals);
+
+// 4. Convert any string to title case
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+  return capitalize(titleCase);
+};
+
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'))
+console.log(convertTitleCase('and here is another title with an EXAMPLE'))
+*/
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// 1
+dogs.forEach(dog => (dog.recFood = Math.trunc(dog.weight ** 0.75 * 28)));
+console.log(dogs);
+
+// 2
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(dogSarah);
+console.log(`
+Sarah's dog is eating too ${
+  dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'
+}
+`);
+
+// 3.
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recFood)
+  .flatMap(dog => dog.owners);
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recFood)
+  .flatMap(dog => dog.owners);
+console.log(ownersEatTooLittle);
+
+// 5.
+console.log(dogs.some(dog => dog.curFood === dog.recFood));
+
+// 6.
+console.log(
+  dogs.some(
+    dog => dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1
+  )
+);
+
+// 7.
+// console.log(dogs.filter(checkEatingOkay));
+
+// 8.
+const dogsCopy = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+
+console.log(dogsCopy);
